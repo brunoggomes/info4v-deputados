@@ -1,6 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { Deputado } from './deputado';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -13,13 +14,9 @@ export class DeputadoService {
   private deputados: Deputado[] = [];
 
 
-  obterDeputados(): Deputado[] {
-    this.http.get(`${this.APIURL}/deputados?ordem=ASC&ordenarPor=nome`).subscribe(
-      res => {
-        console.log(res)
-      })
-      
-    return [...this.deputados]
+  obterDeputados(): Observable<any> {
+    return this.http.get(
+      `${this.APIURL}/deputados?ordem=ASC&ordenarPor=nome`)
   }
 
 }

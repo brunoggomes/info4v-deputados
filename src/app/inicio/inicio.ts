@@ -11,6 +11,8 @@ import { Deputado } from '../model/deputado';
 export class Inicio {
   deputados: Deputado[] = []
   constructor(private ds: DeputadoService) {
-    this.deputados = this.ds.obterDeputados()
+      this.ds.obterDeputados().subscribe(res => {
+        this.deputados = res.dados
+      })
   }
 }
