@@ -20,7 +20,7 @@ export class Busca {
     })
   }
   
-  obterDepesas() {
+  obterDespesas() {
     const idDep = this.formBusca.value.id
     this.ds.obterDespesasPorId(idDep)
   }
