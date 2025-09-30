@@ -13,10 +13,14 @@ export class DeputadoService {
   private APIURL = 'https://dadosabertos.camara.leg.br/api/v2'
   private deputados: Deputado[] = [];
 
-
   obterDeputados(): Observable<any> {
     return this.http.get(
       `${this.APIURL}/deputados?ordem=ASC&ordenarPor=nome`)
   }
+  obterDeputadosPorNome(nome: string) {
+    
+  }
+  obterDespesasPorId(id: number) {
 
+  }
 }

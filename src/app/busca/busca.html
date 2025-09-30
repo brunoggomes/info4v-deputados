@@ -1,1 +1,9 @@
-<p>busca works!</p>
+<h1>Buscar despesas pelo Id do parlamentar</h1>
+
+<form [formGroup]="formBusca">
+    <label for="idDep">Id</label>
+    <input type="number" id="idDep" formControlName="idDep">
+    <input type="button" value="Buscar" 
+           [disabled]="formBusca.invalid"
+           (click)="obterDespesas()">
+</form>
